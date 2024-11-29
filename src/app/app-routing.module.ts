@@ -7,15 +7,17 @@ import { Component2Component } from './component2/component2.component';
 import { Component3Component } from './component3/component3.component';
 import { Component4Component } from './component4/component4.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth.guard';
 
-const routes: Routes = [ { path: 'dashboard', component: DashboardComponent },
-  { path: 'settings', component: SettingsComponent },
-  { path: 'component1', component: Component1Component },
-  { path: 'component2', component: Component2Component },
-  { path: 'component3', component: Component3Component },
-  { path: 'component4', component: Component4Component },
+const routes: Routes = [ 
   { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },];
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] },
+  { path: 'component1', component: Component1Component, canActivate: [AuthGuard] },
+  { path: 'component2', component: Component2Component, canActivate: [AuthGuard] },
+  { path: 'component3', component: Component3Component, canActivate: [AuthGuard] },
+  { path: 'component4', component: Component4Component, canActivate: [AuthGuard] },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

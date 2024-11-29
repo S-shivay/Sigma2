@@ -1,16 +1,23 @@
 <div class="login-container">
 
       <div class="login-form-container">
-        <form class="login-form">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
             <img src="https://www.sigmahr.co.in/images/logo.gif" alt="Company Logo" class="img-fluid mx-auto d-block mb-4">
                         <h2 class="text-center mb-4">Login with your username</h2>
       <label for="username">Enter Your Username</label>
       <input type="text" id="username" formControlName="username">
+      <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+        Username is required
+      </div>
   
       <label for="password">Enter Your Password</label>
       <input type="password" id="password" formControlName="password">
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        Password is required
+      </div>
   
-      <button type="submit" routerLink="/dashboard">Login</button>
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+      <div *ngIf="errorMessage">{{ errorMessage }}</div>
     </form>
     </div>
   </div>

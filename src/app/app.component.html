@@ -1,3 +1,5 @@
+<div *ngIf="authService.isLoggedIn()" class="app-container">
+
 <div class="app-layout">
   <app-sidebar [hidden]="isSidebarHidden"></app-sidebar>
 
@@ -8,4 +10,8 @@
     <router-outlet></router-outlet>
   </div>
 </div>
+</div>
+</div>
+<div *ngIf="!authService.isLoggedIn()">
+  <router-outlet></router-outlet>
 </div>

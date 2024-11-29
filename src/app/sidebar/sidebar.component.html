@@ -4,47 +4,47 @@
         <img src="https://www.sigmahr.co.in/images/logo.gif" alt="User Icon" class="img-fluid mx-auto d-block mb-4">
       </div>
     </div>
-        <div class="menu">
-          <ul>
+    <div class="menu">
+      <ul>
+        <li>
+          <a routerLink="/dashboard" routerLinkActive="active">
+            <span class="material-icons">dashboard</span> Dashboard
+          </a>
+        </li>
+        <li>
+          <a routerLink="/settings" routerLinkActive="active">
+            <span class="material-icons">settings</span> Settings
+          </a>
+        </li>
+        <li>
+          <div class="dropdown-toggle" (click)="toggleDropdown('dropdown1')">
+            <span class="material-icons">view_module</span> Components 1
+            <span class="arrow" [class.rotate]="dropdowns['dropdown1']">&#x25BC;</span>
+          </div>
+          <ul class="dropdown" [class.show]="dropdowns['dropdown1']">
             <li>
-              <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+              <a routerLink="/component1" routerLinkActive="active">Component 1.1</a>
             </li>
             <li>
-              <a routerLink="/settings" routerLinkActive="active">Settings</a>
+              <a routerLink="/component2" routerLinkActive="active">Component 1.2</a>
             </li>
-      
-            <li>
-                <div class="dropdown-toggle" (click)="toggleDropdown('dropdown1')">
-                  Components 1
-                  <span class="arrow" [class.rotate]="dropdowns['dropdown1']">&#x25BC;</span>
-                </div>
-                <ul class="dropdown" [class.show]="dropdowns['dropdown1']">
-                  <li>
-                    <a routerLink="/component1" routerLinkActive="active">Component 1.1</a>
-                  </li>
-                  <li>
-                    <a routerLink="/component2" routerLinkActive="active">Component 1.2</a>
-                  </li>
-                </ul>
-              </li>
-        
-              <!-- Dropdown 2 -->
-              <li>
-                <div class="dropdown-toggle" (click)="toggleDropdown('dropdown2')">
-                  Components 2
-                  <span class="arrow" [class.rotate]="dropdowns['dropdown2']">&#x25BC;</span>
-                </div>
-                <ul class="dropdown" [class.show]="dropdowns['dropdown2']">
-                  <li>
-                    <a routerLink="/component3" routerLinkActive="active">Component 2.1</a>
-                  </li>
-                  <li>
-                    <a routerLink="/component4" routerLinkActive="active">Component 2.2</a>
-                  </li>
-                </ul>
-              </li>
           </ul>
-        </div>
-      </nav>
-      
+        </li>
+        <li>
+          <div class="dropdown-toggle" (click)="toggleDropdown('dropdown2')">
+            <span class="material-icons">apps</span> Components 2
+            <span class="arrow" [class.rotate]="dropdowns['dropdown2']">&#x25BC;</span>
+          </div>
+          <ul class="dropdown" [class.show]="dropdowns['dropdown2']">
+            <li>
+              <a routerLink="/component3" routerLinkActive="active">Component 2.1</a>
+            </li>
+            <li>
+              <a routerLink="/component4" routerLinkActive="active">Component 2.2</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
   

@@ -4,20 +4,40 @@
     align-items: center;
     padding: 0 20px;
     height: 100%;
-  }
-  
-  .search-container {
+}
+
+.search-container {
     flex-grow: 1;
     margin: 0 20px;
-  }
-  
-  button {
+}
+
+.icon-button {
+    position: relative;
     color: white;
-  }
-  
-  .notification-box {
+    transition: color 0.3s ease, transform 0.3s ease;
+    overflow: hidden; /* Ensure ripple stays within button */
+}
+
+.icon-button:hover {
+    color: #ffeb3b; /* Change this to your desired hover color */
+    transform: scale(1.1);
+}
+
+.icon-button:focus {
+    outline: none;
+}
+
+.icon-button:active {
+    transform: scale(0.95); /* Slightly shrink the button on click */
+}
+
+.notification-box {
     padding: 10px;
     width: 200px;
     text-align: left;
-  }
-  
+}
+
+/* Optional: Add some spacing between icons */
+.icon-container {
+    margin-left: 15px; /* Adjust as needed */
+}
